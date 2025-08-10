@@ -65,3 +65,30 @@ Restart the server after changing env vars.
 - Bind to an internal interface and use a reverse proxy (e.g., Nginx) for TLS.
 - Set `ALLOWED_ORIGINS` to your real domains only.
 - Run with workers, e.g.: `uvicorn backend.main:app --host 0.0.0.0 --port 8000 --workers 2`
+
+### JSON QUIZ FORMT
+
+{
+"title": "Quiz about Python",
+"questions": [
+{
+"type": "multiple_choice",
+"question": "What is the output of print(2 + 2)?",
+"options": ["2", "3", "4", "5"],
+"correct_answer": 2,
+"explanation": "2 + 2 equals 4."
+},
+{
+"type": "numeric",
+"question": "How many keywords are there in Python 3.9?",
+"correct_answer": 35,
+"explanation": "Python 3.9 has 35 keywords."
+},
+{
+"type": "text",
+"question": "Name a Python data structure used to store key-value pairs.",
+"correct_answer": "dictionary",
+"explanation": "A dictionary stores key-value pairs."
+},
+]
+}

@@ -5,6 +5,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
+from api.endpoints.quiz import router as quiz_router
+
 app = FastAPI(
     title="LLM Shareable Quiz API",
     docs_url="/docs",
@@ -28,6 +30,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include routers
+app.include_router(quiz_router, prefix="/api/quiz", tags=["quiz"])
 
 
 @app.get("/")
